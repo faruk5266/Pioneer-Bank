@@ -89,6 +89,8 @@
 
             updateBalance("current-balance", depositNumber);
             updateBalance("current-deposit", depositNumber);
+        
+             document.getElementById("deposit-amount").value = "";
 
 
               // withdraw button event handler
@@ -96,6 +98,7 @@
             withdrawBtn.addEventListener("click", function(){
                 const withdrawNumber = getInputNumber("withdraw-amount");
                 updateBalance("current-withdraw", withdrawNumber);
+                updateBalance("current-withdraw", -1 * withdrawNumber);
 
                 document.getElementById("withdraw-amount").value = ""; 
             
@@ -114,7 +117,7 @@
                 document.getElementById(id).innerText = total;
             }
 
-                 document.getElementById("deposit-amount").value = "";
+                
             
       </script>
 </body>
